@@ -1,0 +1,18 @@
+<div class="container">
+  <form action="" method="POST" class="login w-100" [formGroup]="userForm">
+    <h4 class="text-center font-weight-bold">LOGIN</h4>
+    <input formControlName="email" type="text" placeholder="Gmail" class="w-100  p-1">
+    <div *ngIf="formErrors.email" class="text-danger">
+      <small>{{ formErrors.email }}</small>
+    </div>
+
+    <input formControlName="password" type="password" placeholder="Password" class="w-100 mt-3 p-1">
+
+    <div *ngIf="formErrors.password" class="text-danger">
+      <small>{{ formErrors.password }}</small>
+    </div>
+
+    <button (click)="doLogin()" [disabled]="userForm.invalid" class="btn btn-danger px-4 py-1 mt-4">Login</button>
+    <!-- <a href="">Login with gmail</a> -->
+  </form>
+</div>

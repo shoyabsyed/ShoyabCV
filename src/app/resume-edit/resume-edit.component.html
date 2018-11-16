@@ -1,0 +1,150 @@
+<div class="container p-3">
+    <div class="">
+
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="pills-home-tab" data-toggle="pill" data-target="#pills-basic" role="tab"
+                    aria-controls="pills-basic" aria-selected="true">BASIC</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-experience" role="tab"
+                    aria-controls="pills-experience" aria-selected="false">EXPERIENCE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " id="pills-contact-tab" data-toggle="pill" data-target="#pills-education" role="tab"
+                    aria-controls="pills-education" aria-selected="false">EDUCATION</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" role="tab"
+                    aria-controls="pills-contact" aria-selected="false">CONTACT</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade" id="pills-basic" role="tabpanel" aria-labelledby="pills-basic-tab">
+                <form action="" [formGroup]="basicForm" class="mt-5 pt-5">
+                    <div class="row two_inputs profile_name d-flex justify-content-between">
+                        <div class="col-12 col-md-6 first_name">
+                            <label for="">First Name</label>
+                            <input type="text" formControlName="firstName" placeholder="First name">
+                        </div>
+                        <div class="col-12 col-md-6 last_name">
+                            <label for="">Last Name</label>
+                            <input type="text" formControlName="lastName" placeholder="Last name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 job">
+                            <label for="">Proffesion Title</label>
+                            <input type="text" formControlName="jobTitle" placeholder="e.g. Project manager , Head of Marketing">
+                        </div>
+                        <div class="col-md-12 gmail mt-3">
+                            <label for="">Gmail</label>
+                            <input type="text" formControlName="gmail" placeholder="Gmail">
+                        </div>
+                        <div class="col-md-12 about mt-3">
+                            <label for="">About</label>
+                            <textarea name="" formControlName="about" id="" cols="50" rows="4" placeholder="Add something about you"></textarea>
+                        </div>
+                        <div class="col-md-12 submit_btn mt-4">
+                            <button class="btn" (click)="doMyFormSubmit()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="pills-experience" role="tabpanel" aria-labelledby="pills-experience-tab">
+                <form action="" [formGroup]="experienceForm" class="mt-5 pt-5">
+                    <div class="job_title mr-4">
+                        <label for="">Title</label>
+                        <input type="text" formControlName="jobName" placeholder="Job Title">
+                    </div>
+                    <div class="company_name">
+                        <label for="">Company Name</label>
+                        <input type="text" formControlName="companyName" placeholder="CapaCV">
+                    </div>
+                    <div class="description">
+                        <label for="">About</label>
+                        <textarea name="" id="" cols="50" rows="4" formControlName="aboutJob" placeholder="Describe what you've been working on"></textarea>
+                    </div>
+                    <div class="two_inputs job_date d-flex justify-content-between">
+                        <div class="from mr-4">
+                            <label for="">From</label>
+                            <input type="datetime-local" formControlName="fromDate" placeholder="D/MM/YYYY">
+                        </div>
+                        <div class="to">
+                            <label for="">To</label>
+                            <input type="datetime-local" formControlName="endDate" placeholder="D/MM/YYYY">
+                        </div>
+                    </div>
+                    <div class="checkbox mt-5 d-flex align-items-center">
+                        <input type="checkbox" id="check" class="mr-2 checkbox_input">
+                        <label for="check"> I currently work here</label>
+                    </div>
+                    <div class="add_btn">
+                        <button class="btn" (click)="formSubmit()">ADD</button>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="pills-education" role="tabpanel" aria-labelledby="pills-education-tab">
+                <form action="" [formGroup]="educationForm" class="mt-5 pt-5">
+                    <div class="job_title mr-4">
+                        <label for="">University</label>
+                        <input type="text" formControlName="university" placeholder="Collage Title">
+                    </div>
+                    <div class="company_name">
+                        <label for="">Branch Name</label>
+                        <input type="text" formControlName="branchName" placeholder="Branch Title">
+                    </div>
+
+                    <div class="two_inputs job_date d-flex justify-content-between">
+                        <div class="from mr-4">
+                            <label for="">From</label>
+                            <input type="datetime-local"  formControlName="fromDate" placeholder="D/MM/YYYY">
+                        </div>
+                        <div class="to">
+                            <label for="">To</label>
+                            <input type="datetime-local" formControlName="endDate" placeholder="D/MM/YYYY">
+                        </div>
+                    </div>
+                    <div class="add_btn mt-4">
+                        <button class="btn" (click)="educationSubmit()">ADD</button>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade  show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <form action="" [formGroup]="contactForm" class="mt-5 pt-5">
+                    <div class="two_inputs d-flex justify-content-between">
+                        <div class="from mr-4">
+                            <label for="">Mobile Number</label>
+                            <input type="text" formControlName="mobileNumber" placeholder="Mobile Number">
+                        </div>
+                        <div class="to">
+                            <label for="">Gmail</label>
+                            <input type="text" formControlName="gmail" placeholder="Gmail">
+                        </div>
+                    </div>
+                    <div class="address mt-5">
+                        <label for="">Address</label>
+                        <textarea name="" id="" cols="30" rows="3" formControlName="address" placeholder="Address"></textarea>
+                    </div>
+                    <div class="add_btn mt-4">
+                        <button class="btn" (click)="contactSubmit()">ADD</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- <form [formGroup]="form" action="" method="POST">
+          <div class="about d-flex align-items-center">
+            <span>About</span>
+            <textarea formControlName="about"  name="" id="" cols="50" rows="3"></textarea>
+          </div>
+          <div class="work_experience">
+            <span>Work Experience</span>
+          </div>
+        </form>  -->
+    </div>
+</div>

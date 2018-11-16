@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    /* padding: 0; */
+    /* list-style-type: none; */
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+a , a:hover{
+    text-decoration: none;
+}
+
+p{
+    font-size: 14px;
+}
+
+.box_effect {
+    box-shadow: 2px 2px 16px rgba(0,0,0,0.7);
+    background: rgb(8, 7, 7);
+    height: 100%;
+    margin-bottom: 1.5em;
+    position: relative;
+    color: darkgray;
+    margin: 18px 0;
+}
+
+.box_effect:before, .box_effect:after {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background : #fff;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    opacity: .3;
+}
+
+.box_effect:after {
+    width: 2px;
+    height: 30px;
+    top: 18px;
+}
+
+.resume {
+    position: relative;
+    overflow: hidden;
+   
+}
+
+.resume:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(2);
+    background-image: url(assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    filter: blur(3px);
+}

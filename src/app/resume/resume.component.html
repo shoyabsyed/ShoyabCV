@@ -1,0 +1,111 @@
+<!--The content below is only a placeholder and can be repl.aced.-->
+<div class="resume py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <div class="profile text-center text-light">
+                    <div class="profile_border my-3">
+                        <div class="img"></div>
+                    </div>
+                    <h3 class="mb-0">{{ name }}</h3>
+                    <small>{{ designation }}</small>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="box_effect about_me p-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="text-center text-md-left mb-3 text-white">{{ about }}</h4>
+                            <p class="mt-4">
+                                I am <span class="font-weight-bold">Shoyab Syed.</span>
+                                Flexible , Reliable and possess excellent time keeping skills.
+                                Love to understanding people's problems and finding ways to solve them.
+                                Handling work independently in busy environment and also within a team setting.
+                                And always open up for new challenges.
+                                Strive to learn and teach as much as i can.
+                                Good team player with good Communication skills with strong attitude towards learning new technologies.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6">
+                <div class="box_effect skills px-2 pt-2 px-md-3 pt-md-3">
+                    <h4 class="mb-4 text-center text-md-left text-white">Skills</h4>
+                    <ul class="mb-0">
+                        <li>
+                            Having 2 years of IT Experience as a Front End Web Developer in developing Software
+                            Application using , <strong>HTML , CSS3 , Bootstrap 3&4, Javascript, jQuery, Angular, PWA ,
+                            Firebase</strong> in the field of Web Technology and Client side applications.
+                        </li>
+                        <li>
+                            Excellent Skills in Desgining Websites, Strong knowledge on Designing Web & Mobile
+                            UI.
+                        </li>
+                        <li>Strong knowledge in <strong>HTML5, CSS3, JavaScript, jQuery Bootstrap 4.x</strong> and Basic knowledge on <strong>Angular and Ionic.</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="box_effect work_experience  px-3 pt-3">
+                    <h4 class="mb-4 text-center text-md-left text-white">Work Experience</h4>
+                    <div *ngFor="let experience of workExperience; let i = index" [ngClass]="{'mb-5' : i+1 < workExperience.length}">
+                        <h6 class="mb-2">{{ experience.startYear }} - {{ experience.endYear }}</h6>
+                        <div class="mb-0">
+                            <strong class="d-block">{{ experience.designation }}</strong>
+                            <small>at {{ experience.company }}</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="box_effect hobbies px-3 pt-3">
+                    <h4 class="mb-4 text-center text-md-left text-white">Hobbies</h4>
+                    <div *ngFor="let hobby of hobbies" class="hobby-item mb-1">
+                        <img src="../assets/images/{{hobby.icon}}" alt="" title="Browsing" class="hobby__icon">
+                        <span>{{ hobby.title }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box_effect education p-3">
+                    <h4 class="text-center text-md-left mb-3 text-white">Education</h4>
+                    <div class="row">
+                        <div *ngFor="let studies of education" class="col-md-6">
+                            <h6>{{ studies.startYear }} - {{ studies.endYear }}</h6>
+                            <p class="mb-1">{{ studies.course }}</p>
+                            <p>{{ studies.collage }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="box_effect contact p-3">
+                    <h4 class="mb-3 text-center text-md-left text-white">Contact</h4>
+                    <table>
+                        <tr class="">
+                            <td class="font-weight-bold">Address <span>:</span></td>
+                            <td>{{ contact.address }}</td>
+                        </tr>
+                        <tr class="">
+                            <td class="font-weight-bold">Phone <span>:</span></td>
+                            <td> <a [href]="contact.phoneLink">{{ contact.phone }} </a> </td>
+                        </tr>
+                        <tr class="">
+                            <td class="font-weight-bold pb-3">E-mail <span>:</span></td>
+                            <td> <a [href]="contact.mailLink">{{ contact.email }}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

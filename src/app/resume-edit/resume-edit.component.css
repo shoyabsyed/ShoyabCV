@@ -1,0 +1,152 @@
+ul {
+    display:flex;
+    text-align: center;
+}
+
+ul li {
+    flex: 1;
+    cursor: pointer;
+    background: rgb(182, 199, 199);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    
+}
+
+ul li a{
+    padding: 6px 0px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+ul li a.active {
+    background: rgb(2, 62, 65);
+    border-radius: 0px;
+}
+
+ul li a.active:hover{
+    color: #fff;
+}
+
+.tab-pane.active{
+    width: 65%;
+    margin: 0px auto;
+}
+
+.tab-pane .two_inputs div{
+    width: 50%;
+}
+
+.tab-pane .two_inputs input{
+    width: 100%;
+}
+
+.tab-pane form > div{
+    margin: 14px 0px;
+}
+
+
+
+
+.tab-pane form label{
+    font-size: 15px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: .2em;
+    /* margin: 0px 12px; */
+    display: block;
+}
+
+.tab-pane form input{
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 4px 0px;
+    width: 100%;
+    font-size: 14px;
+    transition: .5s;
+}
+
+.tab-pane form input:focus{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+
+
+.tab-pane form input:active ,input:focus{
+    outline: none;
+   
+}
+
+.tab-pane form textarea{
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    font-size: 14px;
+    resize: none;
+    transition: .5s;
+}
+
+.tab-pane form textarea:focus{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+.tab-pane form textarea:active ,textarea:focus{
+    outline: none;
+}
+
+#pills-experience .checkbox label{
+    font-size: 15px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: .2em;
+    /* margin: 0px 12px; */
+    display: inline-block;
+}
+
+#pills-experience .checkbox_input{
+    border: none;
+    /* padding: 4px 0px; */
+    width: auto;
+    font-size: 12px;
+}
+
+.checkbox_input[type="checkbox"]{
+    zoom: 1.6;
+}
+
+.submit_btn button{
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+}
+
+.submit_btn button:hover{
+    background: #000;
+}
+
+
+.add_btn button{
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 6px 16px;
+}
+.add_btn button:hover{
+    background: #000;
+}
+
+
+@media(max-width: 576px){
+    .tab-pane.active{
+        width: 100%;
+        
+    }
+}
+
+
+
+
+
+
+
