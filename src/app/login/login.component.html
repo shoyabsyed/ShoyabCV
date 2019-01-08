@@ -1,18 +1,23 @@
-<div class="container">
-  <form action="" method="POST" class="login w-100" [formGroup]="userForm">
-    <h4 class="text-center font-weight-bold">LOGIN</h4>
-    <input formControlName="email" type="text" placeholder="Gmail" class="w-100  p-1">
-    <div *ngIf="formErrors.email" class="text-danger">
-      <small>{{ formErrors.email }}</small>
-    </div>
-
-    <input formControlName="password" type="password" placeholder="Password" class="w-100 mt-3 p-1">
-
-    <div *ngIf="formErrors.password" class="text-danger">
-      <small>{{ formErrors.password }}</small>
-    </div>
-
-    <button (click)="doLogin()" [disabled]="userForm.invalid" class="btn btn-danger px-4 py-1 mt-4">Login</button>
-    <!-- <a href="">Login with gmail</a> -->
-  </form>
+<div class="login_form">
+  <div class="container">
+    <form action="" method="POST" class="login w-100" [formGroup]="userForm">
+      <h4 class="text-center font-weight-bold text-white mb-5">LOGIN</h4>
+      <small class="text-white">Email</small>
+      <input formControlName="email" type="text" placeholder="Gmail" class="">
+      <div *ngIf="formErrors.email" class="text-danger">
+        <small>{{ formErrors.email }}</small>
+      </div>
+      <small class="text-white">Password</small>
+      <input formControlName="password" type="password" placeholder="Password" class="">
+  
+      <div *ngIf="formErrors.password" class="text-danger">
+        <small>{{ formErrors.password }}</small>
+      </div>
+  
+      <div class="text-center login_btn mt-5 pt-4">
+        <button (click)="doLogin()" class="btn">Let me in.</button>
+      </div>
+      <!-- [disabled]="userForm.invalid" -->
+    </form>
+  </div>
 </div>

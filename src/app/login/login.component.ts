@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { VALID } from '@angular/forms/src/model';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +30,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -44,7 +47,7 @@ export class LoginComponent implements OnInit {
 
       const form = this.userForm;
       for (const field in this.formErrors) {
-        console.log(":: field ::", field);
+        // console.log(":: field ::", field);
         this.formErrors[field] = '';
         const control = form.get(field);
 
@@ -63,7 +66,13 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.userForm.value;
     this.auth.emailLogin(email, password ).then(response => {
       console.log("Login Response", response);
-    })
+    });
+    console.log("email" , email , "password" ,  password);
+    
+    if(email === "sdshoyab46@gmail.com" && password === "SH@Y@b!M46"){
+      this.router.navigate(["/resume"]);
+    }
+
   }
 
 }

@@ -17,7 +17,7 @@ import { ResumeEditComponent } from './resume-edit/resume-edit.component';
     AppComponent,
     LoginComponent,
     ResumeComponent,
-    ResumeEditComponent
+    ResumeEditComponent,
   ],
   imports: [
     BrowserModule,
